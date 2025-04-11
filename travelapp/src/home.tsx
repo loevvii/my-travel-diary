@@ -1,12 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {View,Text,FlatList,Image,TouchableOpacity,StyleSheet,} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { GlobalContext } from '../context/globalcontext';
@@ -44,7 +37,6 @@ const HomeScreen = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-      {/* Header with Dark Mode Button */}
       <View style={styles.header}>
         <Text style={[styles.headerTitle, { color: isDark ? '#fff' : '#000' }]}>
           Travel Memories
@@ -58,7 +50,6 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Main Content */}
       {entries.length === 0 ? (
         <Text style={[styles.noEntriesText, { color: isDark ? '#fff' : '#000' }]}>
           No entries yet.
@@ -69,15 +60,12 @@ const HomeScreen = () => {
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <View style={styles.entryContainer}>
-              {/* Photo */}
               <Image source={{ uri: item.photoUri }} style={styles.photo} />
 
-              {/* Location */}
               <Text style={[styles.locationText, { color: isDark ? '#fff' : '#000' }]}>
                 {item.address}
               </Text>
 
-              {/* Trash Can Icon */}
               <TouchableOpacity onPress={() => removeEntry(item.id)}>
                 <Icon
                   name="delete"
@@ -93,7 +81,6 @@ const HomeScreen = () => {
         />
       )}
 
-      {/* Floating Action Button */}
       <TouchableOpacity
         style={[
           styles.fab,
@@ -157,7 +144,7 @@ const styles = StyleSheet.create({
     height: 16,
   },
   flatListContent: {
-    paddingBottom: 80, // Space for FAB
+    paddingBottom: 80, 
   },
   fab: {
     position: 'absolute',

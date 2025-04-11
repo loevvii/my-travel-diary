@@ -77,7 +77,6 @@ const AddEntryScreen = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: isDark ? '#000' : '#fff' }]}>
-      {/* Main Content */}
       <View style={styles.contentContainer}>
         {photoUri ? (
           <Image source={{ uri: photoUri }} style={styles.image} />
@@ -89,7 +88,6 @@ const AddEntryScreen = () => {
         <Text style={[styles.address, { color: isDark ? '#fff' : '#000' }]}>{address}</Text>
       </View>
 
-      {/* Action Buttons at the Bottom */}
       <View style={styles.actionButtonsContainer}>
         <TouchableOpacity
           style={[

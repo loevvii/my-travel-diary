@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from '../src/home';
 import AddEntryScreen from '../src/entryscreen';
-import { GlobalContext } from '../context/globalcontext'; // Import GlobalContext
+import { GlobalContext } from '../context/globalcontext';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -13,16 +13,15 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
-  const { isDark } = useContext(GlobalContext); // Consume the global theme
+  const { isDark } = useContext(GlobalContext);
 
-  // Define custom themes for light and dark modes
   const MyDarkTheme = {
     ...DarkTheme,
     colors: {
       ...DarkTheme.colors,
-      background: '#000', // Dark background color
-      card: '#121212', // Dark card color
-      text: '#fff', // Light text color
+      background: '#000',
+      card: '#121212',
+      text: '#fff',
     },
   };
 
@@ -30,9 +29,9 @@ const AppNavigator = () => {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: '#fff', // Light background color
-      card: '#f9f9f9', // Light card color
-      text: '#000', // Dark text color
+      background: '#fff',
+      card: '#f9f9f9',
+      text: '#000',
     },
   };
 
